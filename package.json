@@ -149,7 +149,7 @@
     "signale": "^1.2.1",
     "standard": "^8.4.0",
     "style-loader": "^0.12.4",
-    "stylus": "^0.52.4",
+    "stylus": "^0.54.5",
     "stylus-loader": "^2.3.1",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.0"

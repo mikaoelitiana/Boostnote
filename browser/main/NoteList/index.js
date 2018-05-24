@@ -1018,7 +1018,7 @@ class NoteList extends React.Component {
 
     return (
       <div className='NoteList'
-        styleName='root'
+        styleName={config.isSideNavFolded ? 'root--expanded' : 'root'}
         style={this.props.style}
         onDrop={(e) => this.handleDrop(e)}
       >
