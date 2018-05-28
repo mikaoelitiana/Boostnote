@@ -75,7 +75,7 @@ export const DEFAULT_CONFIG = {
     username: '',
     password: ''
   },
-  is_win: win
+  isWin: win
 }
 
 function validate (config) {
