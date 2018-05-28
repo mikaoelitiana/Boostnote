@@ -47,7 +47,7 @@ class Main extends React.Component {
 
     this.toggleFullScreen = () => this.handleFullScreenButton()
     const is_win = global.process.platform == 'win32';
-    ConfigManager.set({is_win: is_win})
+    ConfigManager.set({is_win: !is_win})
   }
 
   getChildContext () {
@@ -351,17 +351,17 @@ class Main extends React.Component {
 
           <div className='window-controls'
             styleName='window-controls'>
-            <button className='minimize-button' styleName='minimize-button' onClick={this.minimizeWindow}>
+            <button styleName='minimize-button' onClick={this.minimizeWindow}>
               <img styleName='icon'
                 src='../resources/icon/icon-minus.svg'
               />
             </button>
-            <button className='maximize-button' styleName='maxmize-button' onClick={this.maximizeWindow}>
+            <button styleName='maxmize-button' onClick={this.maximizeWindow}>
               <img styleName='icon'
                 src='../resources/icon/icon-plus.svg'
               />
             </button>
-            <button className='close-button' styleName='close-button' onClick={this.closeWindow}>
+            <button styleName='close-button' onClick={this.closeWindow}>
               <img styleName='icon'
                 src='../resources/icon/icon-close.svg'
               />
