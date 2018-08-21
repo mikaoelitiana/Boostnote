@@ -2,27 +2,14 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import CSSModules from 'browser/lib/CSSModules'
 import styles from './ApplicationMenuDropdown.styl'
-import _ from 'lodash'
-import i18n from 'browser/lib/i18n'
 
 class ApplicationMenuDropdown extends React.Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      isActive: false,
-      menu: props.menu.items,
-      open: props.open
+      isActive: false
     }
-
-    console.log(this.state.menu, 'submenu')
-  }
-
-  componentWillReceiveProps (nextProps) {
-    this.setState({
-      menu: nextProps.menu.items,
-      open: nextProps.open
-    })
   }
 
   handleMouseDown (e) {
@@ -44,14 +31,15 @@ class ApplicationMenuDropdown extends React.Component {
   }
 
   clickMenu (key) {
-    this.state.menu[key].click()
+    this.props.menu.items[key].click()
   }
 
   render () {
     const { className } = this.props
 
     return (
-      <div className='ApplicationMenuDropdown'
+      <div
+        className='ApplicationMenuDropdown'
         styleName={this.state.open === true ? 'root' : 'root-hidden'}>
         <ul
           styleName='dropdown-items'>
@@ -59,8 +47,8 @@ class ApplicationMenuDropdown extends React.Component {
             <li
               key={key}
               styleName='submenu-item'
-              onClick={() => this.state.menu[key].click()}>
-              {this.state.menu[key].label}
+              onClick={() => this.props.menu.items[key].click()}>
+              {this.props.menu.items[key].label}
             </li>
           )}
         </ul>
