@@ -339,14 +339,33 @@ class Main extends React.Component {
         onMouseMove={e => this.handleMouseMove(e)}
         onMouseUp={e => this.handleMouseUp(e)}
       >
-        <div className={config.is_win ? 'windows-app-header' : 'mac-app-header'} styleName={config.is_win ? 'windows-app-header' : 'mac-app-header'}>
-          <div className='toolbar'
-            styleName='toolbar'>
-            <div className='toolbar-controls'
-              styleName='toolbar-controls'>
-              <ul className='menubar-list' styleName='menubar-list'>
+        <div
+          className={config.is_win ? 'windows-app-header' : 'mac-app-header'}
+          styleName={config.is_win ? 'windows-app-header' : 'mac-app-header'}
+        >
+          <div
+            className='toolbar'
+            styleName='toolbar'
+          >
+            <div
+              className='toolbar-controls'
+              styleName='toolbar-controls'
+            >
+              <ul
+                className='menubar-list'
+                styleName='menubar-list'
+              >
                 {Object.keys(this.state.menu).map(key => {
-                  return <li key={key} className='menuItem' styleName='menu-item' onBlur={this.closemenu} onClick={() => this.openSubmenu(key)}>{this.state.menu[key].label}<ApplicationMenuDropdown menu={this.state.menu[key].submenu} open={this.state.openmenu === key} /></li>
+                  return <li
+                    key={key}
+                    className='menuItem'
+                    styleName='menu-item'
+                    onBlur={this.closemenu}
+                    onClick={() => this.openSubmenu(key)}
+                  >
+                    {this.state.menu[key].label}
+                    <ApplicationMenuDropdown menu={this.state.menu[key].submenu} open={this.state.openmenu === key} />
+                  </li>
                 })}
               </ul>
             </div>
