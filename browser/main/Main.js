@@ -364,7 +364,10 @@ class Main extends React.Component {
                     onClick={() => this.openSubmenu(key)}
                   >
                     {this.state.menu[key].label}
-                    <ApplicationMenuDropdown menu={this.state.menu[key].submenu} open={this.state.openmenu === key} />
+                    <ApplicationMenuDropdown
+                      menu={this.state.menu[key].submenu}
+                      open={this.state.openmenu === key}
+                    />
                   </li>
                 })}
               </ul>
