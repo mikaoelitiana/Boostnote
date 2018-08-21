@@ -334,31 +334,17 @@ class Main extends React.Component {
 
     return (
       <div
-        className='Main'
         styleName='root'
         onMouseMove={e => this.handleMouseMove(e)}
         onMouseUp={e => this.handleMouseUp(e)}
       >
-        <div
-          className={config.is_win ? 'windows-app-header' : 'mac-app-header'}
-          styleName={config.is_win ? 'windows-app-header' : 'mac-app-header'}
-        >
-          <div
-            className='toolbar'
-            styleName='toolbar'
-          >
-            <div
-              className='toolbar-controls'
-              styleName='toolbar-controls'
-            >
-              <ul
-                className='menubar-list'
-                styleName='menubar-list'
-              >
+        <div styleName={config.is_win ? 'windows-app-header' : 'mac-app-header'}>
+          <div styleName='toolbar'>
+            <div styleName='toolbar-controls'>
+              <ul styleName='menubar-list'>
                 {Object.keys(this.state.menu).map(key => {
                   return <li
                     key={key}
-                    className='menuItem'
                     styleName='menu-item'
                     onBlur={this.closemenu}
                     onClick={() => this.openSubmenu(key)}
@@ -373,7 +359,7 @@ class Main extends React.Component {
               </ul>
             </div>
 
-            <div className='window-controls' styleName='window-controls'>
+            <div styleName='window-controls'>
               <button styleName='minimize-button' onClick={this.minimizeWindow}>
                 <img styleName='icon'
                   src='../resources/icon/icon-minus.svg'
@@ -418,9 +404,7 @@ class Main extends React.Component {
               : this.state.navWidth
           }}
         >
-          <div className='windows-check'
-            styleName={config.isWin ? 'windows' : 'not-windows'}
-            >
+          <div styleName={config.isWin ? 'windows' : 'not-windows'}>
             <TopBar style={{width: this.state.listWidth}}
               {..._.pick(this.props, [
                 'dispatch',
